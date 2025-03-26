@@ -5,13 +5,14 @@ import { Form, NavLink } from "react-router-dom";
 import { TrashIcon } from "@heroicons/react/24/solid";
 
 // assets
-import logomark from "../assets/logomark.svg";
+// import logomark from "../assets/logomark.svg";
+import lavender_home from "../assets/lavender_home.png"
 
 const Nav = ({ userName }) => {
   return (
     <nav>
       <NavLink to="/" aria-label="Go to home">
-        <img src={logomark} alt="" height={30} />
+        <img src={lavender_home} alt="" height={30} />
         <span>HomeBudget</span>
       </NavLink>
       {userName && (

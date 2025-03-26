@@ -22,15 +22,18 @@ const ExpenseItem = ({ expense }) => {
       <td>{formatCurrency(expense.amount)}</td>
       <td>{formatDateToLocaleString(expense.createdAt)}</td>
       <td>
-        <Link
-          to={`/budget/${budget[0].id}`}
-          style={{
-            "--accent": budget[0].color,
-            display: "inline-block",
-          }}
-        >
-          {budget[0].name}
-        </Link>
+        {budget && budget.length > 0 ? (
+          <Link
+            to={`/budget/${budget[0].id}`}
+            style={{
+              display: "inline-block",
+            }}
+          >
+            {budget[0].name}
+          </Link>
+        ) : (
+          <span>No Budget Available</span>
+        )}
       </td>
       <td>
         <fetcher.Form method="post">
